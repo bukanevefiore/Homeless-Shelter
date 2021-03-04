@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebApplication1.orderDonate>
+
+@{
+    ViewBag.Title = "Donate";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<head>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        table th {
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<div class="container">
+    <h2>Top Donations</h2>
+
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.amount)
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.amount)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>

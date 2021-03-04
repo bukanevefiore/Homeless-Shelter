@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebApplication1.usersView>
+
+@{
+    ViewBag.Title = "Ticket";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Ticket</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.text)
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.text)
+        </td>
+       
+    </tr>
+}
+
+</table>
